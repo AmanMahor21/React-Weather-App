@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border: none;
+}
+
+body.dark,
+p {
+  color: white;
+}
+body.light,
+p {
+  background-color: transparent !important;
+  color: white;
+}
+body.light::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    135deg,
+    rgb(45, 215, 227),
+    rgb(4, 118, 124)
+  );
+
+  background-position: center;
+  background-size: cover;
+  filter: blur(2px) brightness(50%);
+  z-index: -1;
+}
+.themeBtn {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  background-color: transparent;
+}
+.con {
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: end;
+  width: 100vw;
+
+  flex-direction: column;
+  height: 100vh;
+}
+.themeBtn {
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 31px;
+  align-items: center;
+  width: 100vw;
+}
+.textbox {
+  width: 50%;
+
+  height: 47px;
+  border: none;
+  border-right: 2px solid rgb(11, 176, 221);
+  border-radius: 20px 0 0 20px;
+  font-size: 18px;
+  padding-left: 11px;
+}
+.textbox:visited {
+  border-color: none !important;
+}
+
+.title {
+  width: 100vw;
+  text-align: center;
+  font-weight: 700;
+  padding-block: 22px;
+  color: rgb(0, 173, 227);
+  font-family: monospace;
+  font-size: calc(36px + 1vw);
+  /* font */
+}
+::placeholder {
+  padding-left: 11px;
+  font-size: 16px;
+}
+.btn {
+  height: 47px;
+
+  border-radius: 0px 20px 20px 0px !important;
+}
+.showWeather {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  margin-top: 55px;
+  line-height: 40px;
+}
+.cityName {
+  margin-bottom: 22px;
+}
+.humidity,
+.wind,
+.sea-level,
+.pressure,
+.temp,
+.cityName {
+  display: flex;
+}
+.humidity p,
+.wind p,
+.sea-level p,
+.pressure p,
+.temp p {
+  font-size: 22px;
+  font-weight: 600;
+  align-items: center;
+  display: flex;
+}
+.humidity span,
+.wind span,
+.sea-level span,
+.pressure span,
+.temp span {
+  font-weight: 400;
+}
+
+.humidity-icon,
+.wind-icon,
+.temp-icon,
+.location_icon {
+  height: 38px;
+  font-size: 23px;
+}
+.loadingMsg {
+  padding: 6px 155px 0 0;
+  text-align: center;
+  color: bisque;
+  font-size: 16px;
+  font-weight: 200;
+}
+.notfound p {
+  padding: 6px 155px 0 0;
+}
