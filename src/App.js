@@ -19,7 +19,6 @@ const App = () => {
       console.log(error);
     }
   };
-  console.log('tseti');
 
   // apiFetch();
   // }, [name]);
