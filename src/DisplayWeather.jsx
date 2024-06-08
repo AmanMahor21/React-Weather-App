@@ -17,7 +17,7 @@ const DisplayWeather = ({ setname, fetchedData, name, apiFetch }) => {
   const themechanger = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
-  console.log(theme);
+
   const handleInput = (e) => {
     setname(e.target.value);
   };
