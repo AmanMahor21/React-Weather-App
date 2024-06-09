@@ -13,6 +13,7 @@ const SearchComponent = ({ setState }) => {
     getWeather(searchState)
       .then((response) => {
         setCustomLoader(false);
+        setSearchState("");
         setState((current) => {
           return {
             data: addMultiple
@@ -49,7 +50,7 @@ const SearchComponent = ({ setState }) => {
         type="text"
         className="search-box"
         placeholder="Enter City or Zip Code"
-        name={searchState}
+        value={searchState}
         onKeyDown={handleEnterPress}
         onChange={(e) => setSearchState(e.target.value)}
       />

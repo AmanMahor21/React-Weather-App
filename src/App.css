@@ -98,6 +98,8 @@ html.dark,
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.5);
 } */
+
+/* Add media queries for smaller screens */
 @media screen and (max-width: 782px) {
   .search-wrapper {
     flex-wrap: wrap;
@@ -110,41 +112,24 @@ html.dark,
   }
   .search-box {
     min-width: 100% !important;
-    text-align: center;
-    /* width: 45vw; */
+    text-align: center; 
   }
-  .search-box::placeholder {
-    font-size: 13px;
-  }
-  .search-btn {
-    margin-top: 11px;
+ 
+  .search-box,.search-btn {
+    margin-top: .8rem; 
+    flex: 1 1 100% !important;
     margin-left: 0px !important;
-    text-align: center;
-    width: 50%;
-  }
+
+  } 
 }
 .search-wrapper {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
-  padding: 15px;
-  margin-inline: 30vw;
-  border-radius: 11px;
-  background: white;
-  background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.2)
-  );
-  -webkit-backdrop-filter: blur(1rem);
-  backdrop-filter: blur(1rem);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-  column-gap: 10px;
-  /* width: 100vw; */
 }
+
 .search-box {
-  min-width: 30%;
-  /* width: 30%; */
+  width: 30%;
   color: rgb(36, 35, 42);
   font-size: 14px;
   line-height: 20px;
@@ -155,10 +140,30 @@ html.dark,
   box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
   background: rgb(251, 251, 251);
   transition: all 0.1s ease 0s;
-  :focus {
-    border: 2px solid rgb(124, 138, 255);
-  }
 }
+.search-box:focus {
+  border: 2px solid rgb(124, 138, 255);
+}
+
+.search-btn {
+  margin-left: 0.625rem;
+  display: inline-block;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 13px;
+  height: 2.4375rem;
+  background-color: #9147ff;
+  color: white;
+  padding: 8px 16px;
+  flex: 0 0 auto; /* Prevent button from shrinking */
+}
+
+/* Add media queries for smaller screens */
+
+
 .checkbox-wrapper-47 input[type="checkbox"] {
   display: none;
   visibility: hidden;
@@ -204,8 +209,8 @@ html.dark,
   transition: 0.25s all ease;
 }
 
-.search-btn {
-  /* margin-left: 0.625rem; */
+/* .search-btn {
+  margin-left: 0.625rem;
   display: inline-block;
   outline: 0;
   border: none;
@@ -217,11 +222,10 @@ html.dark,
   background-color: #9147ff;
   color: white;
   padding: 8px 16px;
-}
+} */
 
 .search-btn-disabled {
   background-color: rgba(145, 71, 255, 0.5);
-  /* opacity: 0.7; */
   pointer-events: none !important;
 }
 
@@ -274,7 +278,6 @@ html.dark,
   flex-wrap: wrap; /* Allow cards to wrap to the next line */
   justify-content: center;
   gap: 10px;
-  /* filter: blur(0); */
 }
 
 .card {
@@ -310,6 +313,9 @@ html.dark,
 @media (max-width: 600px) {
   .card {
     min-width: 100%; /* Ensure cards take full width on very small screens */
+  }
+  .search-box {
+    width: 100%;
   }
 }
 
@@ -393,8 +399,8 @@ html.dark,
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding-left: 10px; */
-  /* padding-right: 10px; */
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #multi-check {
   margin-right: 10px;
