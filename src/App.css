@@ -128,7 +128,7 @@ html.dark,
   display: flex;
   justify-content: center;
   padding: 15px;
-  margin-inline: 22vw;
+  margin-inline: 30vw;
   border-radius: 11px;
   background: white;
   background: linear-gradient(
@@ -139,6 +139,7 @@ html.dark,
   -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(1rem);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  column-gap: 10px;
   /* width: 100vw; */
 }
 .search-box {
@@ -204,7 +205,7 @@ html.dark,
 }
 
 .search-btn {
-  margin-left: 0.625rem;
+  /* margin-left: 0.625rem; */
   display: inline-block;
   outline: 0;
   border: none;
@@ -392,7 +393,7 @@ html.dark,
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   /* padding-right: 10px; */
 }
 #multi-check {
