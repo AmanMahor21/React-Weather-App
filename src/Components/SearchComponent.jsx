@@ -30,7 +30,7 @@ const SearchComponent = ({ setState }) => {
 
   // HANDLE ENTER
   const handleEnterPress = (e) => {
-    if (e.code === "Enter") {
+    if (e.code === "Enter" && searchState) {
       getWeatherData();
     }
   };
