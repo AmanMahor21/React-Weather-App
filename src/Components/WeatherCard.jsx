@@ -47,11 +47,11 @@ const WeatherCard = ({ data }) => {
       <div className="upper-card">
         <img src={getIconUrl(weatherIconCode)} alt="Is" className="img-temp" />
         <div className="info">
-          <h2>25°C</h2>
+          <h2>{parseInt(main?.temp)}°C</h2>
         </div>
 
         <div className="info">
-          <p>Sunny</p>
+          <p>{weather?.[0]?.main}</p>
           <span>Feels like {main?.feels_like}</span>
         </div>
         <div className="info">
