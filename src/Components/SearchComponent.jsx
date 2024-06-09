@@ -4,6 +4,7 @@ import { getWeather } from "../core/_request";
 const SearchComponent = ({ setState }) => {
   // VAIRABLES & STATES
   const [searchState, setSearchState] = useState("");
+  const [addMultiple, setAddMultiple] = useState(false);
   const [customLoader, setCustomLoader] = useState(false);
 
   // GET WEATHER VIA API
@@ -12,15 +13,21 @@ const SearchComponent = ({ setState }) => {
     getWeather(searchState)
       .then((response) => {
         setCustomLoader(false);
-        setState({
-          data: response?.data,
-          error: undefined,
+        setState((current) => {
+          return {
+            data: addMultiple
+              ? [...current?.data, response?.data]
+              : [response?.data],
+            error: undefined,
+          };
         });
       })
       .catch((e) => {
-        setState({
-          data: "",
-          error: e?.response?.statusText,
+        setState((current) => {
+          return {
+            data: current?.data,
+            error: e?.response?.statusText,
+          };
         });
       })
       .finally(() => {
@@ -55,6 +62,17 @@ const SearchComponent = ({ setState }) => {
       >
         Search
       </button>
+
+      {/* MULTIPLE */}
+      <div id="multiple">
+        <input
+          type="checkbox"
+          id="multi-check"
+          checked={addMultiple}
+          onChange={(e) => setAddMultiple(e.target.checked)}
+        />
+        <label htmlFor="multi-check">Add Multiple Cities</label>
+      </div>
 
       {/* LOADER */}
       {customLoader && (

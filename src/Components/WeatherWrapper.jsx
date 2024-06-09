@@ -24,13 +24,16 @@ const WeatherWrapper = () => {
         {/* SEARCH FIELD */}
         <SearchComponent setState={setState} />
 
+        {/* IF ERROR OCCUR */}
+        {state?.error && <NoDataFound />}
+
         {/* CARD */}
-        {state?.data ? (
+        {state?.data && (
           <div className="card-wrapper">
-            <WeatherCard data={state?.data} />
+            {state?.data?.map((item, index) => {
+              return <WeatherCard data={item} />;
+            })}
           </div>
-        ) : (
-          state?.error && !state?.data && <NoDataFound />
         )}
       </div>
     </React.Fragment>
