@@ -34,7 +34,6 @@ const WeatherCard = ({ data }) => {
   const { main, name, sys, weather, wind, visibility } = data;
   const weatherIconCode = weather?.[0]?.main?.toLowerCase();
 
-  console.log(data);
   return (
     <div className="card">
       <div id="top">

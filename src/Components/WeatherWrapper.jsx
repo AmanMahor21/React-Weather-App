@@ -14,6 +14,7 @@ const WeatherWrapper = () => {
 
   return (
     <React.Fragment>
+      {/* DARK & LIGHT MODE */}
       <Toggle />
 
       <div className="main-wrapper">

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const Toggle = () => {
   const [isToggle, setIsToggle] = useState(false);
 
+  // ADD CLASS ON STATE
   useEffect(() => {
     if (isToggle) {
       document.documentElement.classList.add("dark");
