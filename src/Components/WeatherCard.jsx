@@ -3,32 +3,7 @@ import SVGWind from "../assests/icons/windsock.svg";
 import SVGHumidity from "../assests/icons/raindrop.svg";
 import SVGPresssure from "../assests/icons/thermometer.svg";
 import DetailBox from "./DetailBox";
-
-// GET DYNAMIC ICON
-const getIconUrl = (iconCode) => {
-  try {
-    return require(`../assests/icons/${iconCode}.svg`);
-  } catch (error) {
-    console.error(`Icon for code ${iconCode} not found.`);
-    return null;
-  }
-};
-
-// GET DATE
-const getDate = (data) => {
-  const date = new Date();
-  const dateOptions = { year: "numeric", month: "long", day: "numeric" };
-  const timeOptions = {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  };
-  const formattedDate = new Intl.DateTimeFormat(
-    "en-US",
-    data === "date" ? dateOptions : timeOptions
-  ).format(date);
-  return formattedDate;
-};
+import { getIconUrl, getDate } from "../helper/_functions";
 
 const WeatherCard = ({ data }) => {
   const { main, name, sys, weather, wind, visibility } = data;
