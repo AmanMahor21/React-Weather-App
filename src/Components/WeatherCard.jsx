@@ -1,8 +1,6 @@
 import React from "react";
-import sun from "../assests/icons/clear-day.svg";
 import SVGWind from "../assests/icons/windsock.svg";
 import SVGHumidity from "../assests/icons/raindrop.svg";
-import SVGAir from "../assests/icons/dust-wind.svg";
 import SVGPresssure from "../assests/icons/thermometer.svg";
 import DetailBox from "./DetailBox";
 
