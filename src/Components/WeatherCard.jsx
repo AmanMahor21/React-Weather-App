@@ -24,7 +24,7 @@ const WeatherCard = ({ data }) => {
 
         <div className="info">
           <p>{weather?.[0]?.main}</p>
-          <span>Feels like {main?.feels_like}</span>
+          <span>Feels like {parseInt(main?.feels_like)}</span>
         </div>
         <div className="info">
           <p> {getDate("date")}</p>
