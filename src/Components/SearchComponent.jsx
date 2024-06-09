@@ -41,6 +41,7 @@ const SearchComponent = ({ setState }) => {
       <input
         type="text"
         className="search-box"
+        placeholder="Enter City or Zip Code"
         name={searchState}
         onKeyDown={handleEnterPress}
         onChange={(e) => setSearchState(e.target.value)}
