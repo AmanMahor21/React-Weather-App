@@ -86,9 +86,14 @@ html.dark,
   margin-top: 1rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-left: 200px;
+  padding-right: 200px;
 }
+
 .search-box {
-  width: 30%;
+  flex: 1 1 300px; /* Allows the input to grow and shrink */
   color: rgb(36, 35, 42);
   font-size: 16px;
   line-height: 20px;
@@ -99,10 +104,45 @@ html.dark,
   box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
   background: rgb(251, 251, 251);
   transition: all 0.1s ease 0s;
-  :focus {
-    border: 2px solid rgb(124, 138, 255);
+}
+.search-box:focus {
+  border: 2px solid rgb(124, 138, 255);
+}
+
+.search-btn {
+  margin-left: 0.625rem;
+  display: inline-block;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 13px;
+  height: 2.4375rem;
+  background-color: #9147ff;
+  color: white;
+  padding: 8px 16px;
+  flex: 0 0 auto; /* Prevent button from shrinking */
+}
+
+/* Add media queries for smaller screens */
+@media (max-width: 768px) {
+  .search-wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .search-box,
+  .search-btn {
+    flex: 1 1 100%; /* Make the elements take full width on smaller screens */
+    margin-left: 0;
+  }
+
+  .search-btn {
+    margin-top: 1rem; /* Add some margin on top for better spacing */
   }
 }
+
 .checkbox-wrapper-47 input[type="checkbox"] {
   display: none;
   visibility: hidden;
@@ -146,21 +186,6 @@ html.dark,
 .checkbox-wrapper-47 label,
 .checkbox-wrapper-47 label::before {
   transition: 0.25s all ease;
-}
-
-.search-btn {
-  margin-left: 0.625rem;
-  display: inline-block;
-  outline: 0;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  border-radius: 4px;
-  font-size: 13px;
-  height: 2.4375rem;
-  background-color: #9147ff;
-  color: white;
-  padding: 8px 16px;
 }
 
 .search-btn-disabled {
@@ -242,6 +267,9 @@ html.dark,
 @media (max-width: 600px) {
   .card {
     min-width: 100%; /* Ensure cards take full width on very small screens */
+  }
+  .search-box {
+    width: 100%;
   }
 }
 
@@ -327,6 +355,47 @@ html.dark,
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
+  cursor: pointer;
+}
+
+.checkbox-input {
+  display: none; /* Hide the default checkbox */
+}
+
+.checkbox-custom {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #fff;
+  border: 2px solid #666;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-custom::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid #666;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-input:checked + .checkbox-custom::after {
+  display: block;
+}
+
+#multiple label {
+  cursor: pointer;
+  font-size: 14px;
+}
+#multiple:hover {
+  background-color: rgba(0, 119, 255, 0.06);
 }
 #multi-check {
   margin-right: 10px;
