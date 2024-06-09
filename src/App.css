@@ -170,7 +170,9 @@ html.dark,
 
 .card-wrapper {
   display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
   justify-content: center;
+  gap: 10px;
 }
 
 .card {
@@ -182,6 +184,21 @@ html.dark,
   border-radius: 8px;
   overflow: hidden;
   margin-top: 1.875rem;
+  max-width: 550px; /* Set a max width */
+  min-width: 484px; /* Ensure cards do not get smaller than 484px */
+  flex: 1 1 484px; /* Allow cards to grow and shrink, with a basis of 484px */
+}
+
+@media (max-width: 1000px) {
+  .card {
+    min-width: 300px; /* Adjust the minimum width for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    min-width: 100%; /* Ensure cards take full width on very small screens */
+  }
 }
 
 .upper-card {
