@@ -19,7 +19,7 @@ const WeatherWrapper = () => {
 
       <div className="main-wrapper">
         {/* HEADER  */}
-        <HeaderTag title={"ReactWeather"} />
+        <HeaderTag title={"Weather Application"} />
 
         {/* SEARCH FIELD */}
         <SearchComponent setState={setState} />
