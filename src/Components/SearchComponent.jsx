@@ -12,7 +12,10 @@ const SearchComponent = ({ setState }) => {
     getWeather(searchState)
       .then((response) => {
         setCustomLoader(false);
-        setState(response?.data);
+        setState({
+          data: response?.data,
+          error: undefined,
+        });
       })
       .catch((e) => {
         setState({

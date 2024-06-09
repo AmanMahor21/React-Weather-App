@@ -1,5 +1,10 @@
 import React from "react";
 import sun from "../assests/icons/clear-day.svg";
+import SVGWind from "../assests/icons/windsock.svg";
+import SVGHumidity from "../assests/icons/raindrop.svg";
+import SVGAir from "../assests/icons/dust-wind.svg";
+import SVGPresssure from "../assests/icons/thermometer.svg";
+import DetailBox from "./DetailBox";
 
 // GET DYNAMIC ICON
 const getIconUrl = (iconCode) => {
@@ -12,35 +17,74 @@ const getIconUrl = (iconCode) => {
 };
 
 // GET DATE
-const getDate = () => {
+const getDate = (data) => {
   const date = new Date();
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  const formattedDate = new Intl.DateTimeFormat("en-US", options).format(date);
+  const dateOptions = { year: "numeric", month: "long", day: "numeric" };
+  const timeOptions = {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  };
+  const formattedDate = new Intl.DateTimeFormat(
+    "en-US",
+    data === "date" ? dateOptions : timeOptions
+  ).format(date);
   return formattedDate;
 };
 
 const WeatherCard = ({ data }) => {
-  const { main, name, sys, weather } = data;
-  const weatherIconCode = weather?.[0]?.main;
+  const { main, name, sys, weather, wind, visibility } = data;
+  const weatherIconCode = weather?.[0]?.main?.toLowerCase();
 
-  console.log(weather);
+  console.log(data);
   return (
-    <div class="card">
+    <div className="card">
+      <div id="top">
+        <p>
+          {name}, {sys?.country}
+        </p>
+      </div>
       <div className="upper-card">
-        <img src={sun} alt="Is" className="img-temp" />
-        <div class="info">
+        <img src={getIconUrl(weatherIconCode)} alt="Is" className="img-temp" />
+        <div className="info">
           <h2>25°C</h2>
         </div>
-        <div class="info">
+
+        <div className="info">
           <p>Sunny</p>
-          <span>Feels like 80</span>
+          <span>Feels like {main?.feels_like}</span>
+        </div>
+        <div className="info">
+          <p> {getDate("date")}</p>
+          <span>{getDate("time")}</span>
         </div>
       </div>
 
       <div className="lower-card">
-        <div>wind</div>
-        <div>humidity</div>
-        <div>extra info</div>
+        <DetailBox
+          src={SVGHumidity}
+          title={"Humidity"}
+          width={30}
+          value={main?.humidity}
+        />
+        <DetailBox
+          src={SVGWind}
+          title={"Wind Speed"}
+          width={30}
+          value={wind?.speed}
+        />
+        <DetailBox
+          src={SVGPresssure}
+          title={"Pressure"}
+          width={30}
+          value={main?.pressure}
+        />
+        <DetailBox
+          src={SVGWind}
+          title={"Visibility"}
+          width={30}
+          value={visibility}
+        />
       </div>
     </div>
   );

@@ -11,8 +11,6 @@ const WeatherWrapper = () => {
     error: undefined,
   });
 
-  console.log(state);
-
   return (
     <React.Fragment>
       <div className="main-wrapper">
@@ -23,10 +21,13 @@ const WeatherWrapper = () => {
         <SearchComponent setState={setState} />
 
         {/* CARD */}
-        <WeatherCard data={state}/>
-
-        {/* IF NOT DATA FOUND */}
-        {state?.error && <NoDataFound />}
+        {state?.data ? (
+          <div className="card-wrapper">
+            <WeatherCard data={state?.data} />
+          </div>
+        ) : (
+          state?.error && !state?.data && <NoDataFound />
+        )}
       </div>
     </React.Fragment>
   );
