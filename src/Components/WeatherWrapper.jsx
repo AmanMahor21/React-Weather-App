@@ -3,6 +3,7 @@ import SearchComponent from "./SearchComponent";
 import HeaderTag from "./HeaderTag";
 import NoDataFound from "./NoDataFound";
 import WeatherCard from "./WeatherCard";
+import Toggle from "./Toggle";
 
 const WeatherWrapper = () => {
   // STATES
@@ -13,6 +14,8 @@ const WeatherWrapper = () => {
 
   return (
     <React.Fragment>
+      <Toggle />
+
       <div className="main-wrapper">
         {/* HEADER  */}
         <HeaderTag title={"ReactWeather"} />
