@@ -207,6 +207,7 @@ html.dark,
 .checkbox-wrapper-47 label,
 .checkbox-wrapper-47 label::before {
   transition: 0.25s all ease;
+ 
 }
 
 /* .search-btn {
