@@ -29,7 +29,7 @@ html,
   background-size: cover;
   background-position: center;
   background-image: url(images/DarkMode.jpg);
-  color: white;
+  color: white !important;
 }
 
 .dark html,
@@ -40,7 +40,7 @@ html.dark,
   background-size: cover;
   background-position: center;
   z-index: 9999;
-  color: white;
+  color: white !important;
 }
 
 #toggle {
@@ -223,7 +223,6 @@ html.dark,
 .no-data {
   text-align: center;
   margin-top: 1.875rem;
-  color: black;
   font-size: 20px;
 }
 
@@ -296,14 +295,15 @@ html.dark,
     rgba(255, 255, 255, 0.1),
     rgba(255, 255, 255, 0.2)
   );
-  backdrop-filter: blur(1rem);
-  /* box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2); */
   box-shadow: 0 0 8px 1px #4b5457;
   transition: transform 0.5s;
 }
+.card-content{
+  backdrop-filter: blur(1rem);
+}
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
   z-index: 9999;
 }
 
@@ -413,8 +413,18 @@ html.dark,
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 9px;
   padding-left: 10px;
   padding-right: 10px;
+}
+#multiple:hover {
+  background-color: rgba(124, 185, 232, 0.5);
+  border-radius: 6px;
+  /* margin-left: 9px; */
+  cursor: pointer !important;
+}
+#multiple label{
+  cursor: pointer;
 }
 
 #multi-check {
