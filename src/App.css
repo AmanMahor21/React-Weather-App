@@ -11,10 +11,9 @@ p {
   margin-top: 0;
 }
 
-/* Default styles (light mode or no mode) */
+/* Default styles (light mode or no mode)  */
 html,
 #root {
-  /* background: url(images/back2.jpg); */
   background: url(images/Background.jpg);
   background-size: cover;
   background-size: cover;
@@ -22,13 +21,11 @@ html,
   background-repeat: no-repeat;
   background-position: center;
 
-  /* background-color: white; */
   color: black;
-  /* transition: background-color 0.5s ease, color 0.5s ease; */
 }
 
 /* /Dark mode styles */
-*/ .dark {
+.dark {
   background-size: cover;
   background-position: center;
   background-image: url(images/DarkMode.jpg);
@@ -139,7 +136,7 @@ html.dark,
   border-radius: 4px;
   padding: 8px 16px;
   border: 2px solid transparent;
-  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  /* box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px; */
   background: rgb(251, 251, 251);
   transition: all 0.1s ease 0s;
 }
@@ -212,7 +209,6 @@ html.dark,
 .checkbox-wrapper-47 label::before {
   transition: 0.25s all ease;
 }
-
 
 .search-btn-disabled {
   background-color: rgba(145, 71, 255, 0.5) !important;
