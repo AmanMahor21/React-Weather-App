@@ -41,12 +41,14 @@ const WeatherCard = ({ data }) => {
         <div className="lower-card">
           <DetailBox
             src={SVGHumidity}
+            // measure={'%'}
             title={"Humidity"}
             width={30}
-            value={main?.humidity}
-          />
+            value={`${main?.humidity} %`}
+            />
           <DetailBox
             src={SVGWind}
+            measure={'m/s'}
             title={"Wind Speed"}
             width={30}
             value={wind?.speed}
@@ -55,15 +57,15 @@ const WeatherCard = ({ data }) => {
             src={SVGPresssure}
             title={"Pressure"}
             width={30}
-            value={main?.pressure}
+            value={`${main?.pressure} hPa`}
           />
           <DetailBox
             src={visiblity}
             // src={SVGWind}
             title={"Visibility"}
             width={15}
-            value={visibility}
-          />
+            value={`${visibility} m`}
+            />
         </div>
       </div>
     </div>

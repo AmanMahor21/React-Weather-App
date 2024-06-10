@@ -261,6 +261,9 @@ html.dark,
 .lower-card :last-child .row p {
   padding-right: 5px;
 }
+.lower-card :last-child .row span {
+  padding-top: 3px;
+}
 
 .card {
   display: flex;
@@ -387,7 +390,13 @@ html.dark,
   align-items: center;
   margin-bottom: 5px;
 }
+.lower-card :nth-child(4) {
+  margin-top: 6px;
+}
 
+.lower-card :nth-child(4) p {
+  padding-top: 4px;
+}
 #multiple {
   display: flex;
   justify-content: center;
